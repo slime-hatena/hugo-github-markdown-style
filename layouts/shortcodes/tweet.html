@@ -38,15 +38,5 @@
     If it does not load properly, it may have been made private or deleted.
   </blockquote>
 </div>
-<script>
-  {
-    const blockquote = document.querySelector("#tweet-{{ .id }}>blockquote");
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches != true) {
-      blockquote.dataset.theme = "light";
-    } else {
-      blockquote.dataset.theme = "dark";
-    }
-    blockquote.className = "twitter-tweet";
-  }
-</script>
+<script>((b)=>{b=document.querySelector("#tweet-{{ .id }}>blockquote");b.dataset.theme=((window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');b.className="twitter-tweet";})()</script>
 {{- end -}}
