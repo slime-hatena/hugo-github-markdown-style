@@ -27,6 +27,10 @@
 
   {{ .Content }}
 
+  {{ if .Site.Params.hatenaBookmark }}
+    <div id="hatena-bookmark-marker"></div>
+  {{ end }}
+
   <p>
     Permalink: <a id="permalink" href="{{ .Permalink }}">{{ .Permalink }}</span>
   </p>

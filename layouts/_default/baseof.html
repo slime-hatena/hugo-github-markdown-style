@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
   {{ end }}
 
+  {{ if .Site.Params.hatenaBookmark }}
+    {{ partial "hatena_bookmark_js.html" . }}
+  {{ end }}
+
   {{ if .Site.Params.alternativeTweet }}
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   {{ end }}
