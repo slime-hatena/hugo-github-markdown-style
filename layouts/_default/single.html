@@ -27,6 +27,10 @@
 
   {{ .Content }}
 
+  {{ if .Site.Params.hatenaStar }}
+    <div id="hatena-star-foot-marker" class="hatena-star-marker"></div>
+  {{ end }}
+
   {{ if .Site.Params.hatenaBookmark }}
     <div id="hatena-bookmark-marker"></div>
   {{ end }}

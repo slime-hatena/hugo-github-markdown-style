@@ -46,6 +46,10 @@
     </footer>
   {{ end }}
 
+  {{ if .Site.Params.hatenaStar }}
+    {{ partial "hatena_star_js.html" . }}
+  {{ end }}
+
 </body>
 
 </html>
