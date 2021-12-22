@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if not .IsHome }}{{ .Title }}｜{{ end }}{{ .Site.Title }}</title>
+
+  {{ with resources.Get "js/index.ts" }}
+    {{ $js := resources.Get . | js.Build | minify | fingerprint }}
+    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+  {{ end }}
+
+  {{ with resources.Get "css/index.scss" }}
+    {{ $style := resources.Get . | resources.ToCSS (dict "includePaths" (slice "node_modules")) | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+  {{ end }}
+
+  {{ if .Site.Params.alternativeTweet }}
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  {{ end }}
+</head>
+
+<body class="markdown-body">
+  <header>
+    <h1><a href="/" class="site-title">{{ .Site.Title }}</a></h1>
+    <div class="description">{{ .Site.Params.description }}</div>
+    <ul class="menu">
+      {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}"><img src="https://img.shields.io/badge/{{ if .Params.left }}{{ .Params.left }}{{ else }}{{ .URL }}{{ end }}-{{ if .Params.right }}{{ .Params.right }}{{ else }}{{ .Name }}{{ end }}-{{ .Params.Color }}{{ if .Params.logo }}?logo={{ .Params.logo }}{{ end }}"></a></li>
+      {{ end }}
+    </ul>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ with .Site.Params.footer }}
+    <hr />
+    <footer>
+      {{ . | markdownify }}
+    </footer>
+  {{ end }}
+
+</body>
+
 </html>

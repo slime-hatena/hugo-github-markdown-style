@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <h2><span id="title">{{ .Title | markdownify }}</span></h2>
+  <div class="article-meta">
+    {{ with .Params.author }}
+      <span>{{ . }}</span>
+    {{ end }}
+    {{ if (gt .Params.date 0) }}
+      <span>{{ .Date.Format "2006/01/02" }}</span>
+    {{ end }}
+    {{ with .Params.categories }}
+      <span>
+        カテゴリ:
+        {{ range . }}
+          <a href="/categories/{{ . }}">{{ . }}</a>
+        {{ end }}
+      </span>
+    {{ end }}
+    {{ with .Params.tags }}
+      <span>
+        タグ:
+        {{ range . }}
+          <a href="/tags/{{ . }}">{{ . }}</a>
+        {{ end }}
+      </span>
+    {{ end }}
+  </div>
+
+  {{ .Content }}
+
+  <p>
+    Permalink: <a id="permalink" href="{{ .Permalink }}">{{ .Permalink }}</span>
+  </p>
+{{ end }}

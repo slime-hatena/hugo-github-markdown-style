@@ -1,0 +1,19 @@
+{{ define "main" }}
+  {{if not .IsHome }}
+    <h2 id="title">{{ .Title | markdownify }}</h2>
+  {{ end }}
+
+  {{ .Content }}
+
+  {{ $paginator := (.Paginator .Site.Params.paginate) }}
+  {{ if .IsHome }}{{ $paginator := (.Paginator .Site.RegularPages.ByDate.Reverse .Site.Params.paginate)}}{{ end }}
+  <ul>
+    {{ range $paginator.Pages }}
+      <li>
+        <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+        <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+      </li>
+    {{ end }}
+  </ul>
+  {{ template "_internal/pagination.html" . }}
+{{ end }}
