@@ -13,9 +13,19 @@ footer {
   margin-bottom: 2em;
 }
 
-a.site-title {
-  text-decoration: none;
-  color: var(--color-fg-default);
+#site-title {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.25;
+  border-bottom: 1px solid var(--color-border-muted);
+
+  & > a{
+    text-decoration: none;
+    color: var(--color-fg-default);
+  }
 }
 
 div.description{
@@ -48,6 +58,10 @@ ul.pagination.pagination-default {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+}
+
+#title{
+  font-size: 1.6rem;
 }
 
 .article-meta {

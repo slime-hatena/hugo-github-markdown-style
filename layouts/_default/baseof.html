@@ -28,7 +28,12 @@
 
 <body class="markdown-body">
   <header>
-    <h1><a href="/" class="site-title">{{ .Site.Title }}</a></h1>
+    {{ if .IsHome }}
+      <h1 id="site-title"><a href="/">{{ .Site.Title }}</a></h1>
+    {{ else }}
+      <div id="site-title"><a href="/">{{ .Site.Title }}</a></div>
+    {{ end }}
+
     <div class="description">{{ .Site.Params.description }}</div>
     <ul class="menu">
       {{ range .Site.Menus.main }}
