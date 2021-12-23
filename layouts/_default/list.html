@@ -10,7 +10,11 @@
   <ul>
     {{ range $paginator.Pages }}
       <li>
-        <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+        {{ if .Date }}
+          <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+        {{ else }}
+          <span class="date">----/--/--</span>
+        {{ end }}
         <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
       </li>
     {{ end }}
