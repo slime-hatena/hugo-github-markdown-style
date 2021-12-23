@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if not .IsHome }}{{ .Title }}｜{{ end }}{{ .Site.Title }}</title>
 
+  {{ if eq (getenv "HUGO_ENV") "production" }}
+    {{ if .Site.Params.gtagId }}
+      {{ partial "gtag.html" . }}
+    {{ end }}
+  {{ end }}
+
   {{ with resources.Get "css/index.scss" }}
     {{ $style := resources.Get . | resources.ToCSS (dict "includePaths" (slice "node_modules")) | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
