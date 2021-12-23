@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h2><span id="title">{{ .Title | markdownify }}</span></h2>
+  <h1><span id="title">{{ .Title | markdownify }}</span></h1>
   <div class="article-meta">
     {{ with .Params.author }}
       <span>{{ . }}</span>
