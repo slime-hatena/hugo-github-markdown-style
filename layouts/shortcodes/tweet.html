@@ -35,7 +35,7 @@
 <div id="tweet-{{ .id }}">
   <blockquote class="twitter-tweet-prepare">
     <a href="https://twitter.com/{{ .user }}/status/{{ .id }}" target="_blank">Tweet: {{ .id }}</a><br>
-    If it does not load properly, it may have been made private or deleted.
+    ツイートを読込中です。もし表示されない場合はアカウントが非公開になったか、ツイートが削除されているかもしれません。
   </blockquote>
 </div>
 <script>((b)=>{b=document.querySelector("#tweet-{{ .id }}>blockquote");b.dataset.theme=((window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');b.className="twitter-tweet";})()</script>
