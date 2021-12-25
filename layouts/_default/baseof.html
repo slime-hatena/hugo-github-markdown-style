@@ -37,7 +37,7 @@
     <div class="description">{{ .Site.Params.description }}</div>
     <ul class="menu">
       {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL | relURL }}"{{ if .Params.target }} target="{{ .Params.target }}"{{ end }}><img src="https://img.shields.io/badge/{{ if .Params.left }}{{ .Params.left }}{{ else }}{{ .URL }}{{ end }}-{{ if .Params.right }}{{ .Params.right }}{{ else }}{{ .Name }}{{ end }}-{{ .Params.Color }}{{ if .Params.logo }}?logo={{ .Params.logo }}{{ end }}"></a></li>
+        <li><a href="{{ .URL | relURL }}"{{ if .Params.target }} target="{{ .Params.target }}"{{ end }}><img src="https://img.shields.io/badge/{{ if .Params.label }}{{ .Params.label }}{{ else }}{{ .URL }}{{ end }}-{{ if .Params.message }}{{ .Params.message }}{{ else }}{{ .Name }}{{ end }}-{{ .Params.Color }}{{ if .Params.logo }}?logo={{ .Params.logo }}{{ end }}"></a></li>
       {{ end }}
     </ul>
   </header>
