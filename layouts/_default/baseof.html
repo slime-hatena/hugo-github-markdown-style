@@ -48,7 +48,20 @@
   {{ with .Site.Params.footer }}
     <hr />
     <footer>
-      {{ . | markdownify }}
+      {{ if or .poweredByHugo .themeInformation }}
+        <p>
+          {{ if .poweredByHugo }}
+            <a href="https://gohugo.io/" target="_blank">Powered by Hugo</a>
+          {{ end }}
+          {{ if and .poweredByHugo .themeInformation }}
+            |
+          {{ end }}
+          {{ if .themeInformation }}
+            <a href="https://github.com/slime-hatena/hugo-github-markdown" target="_blank"> Theme: hugo-github-markdown</a>
+          {{ end }}
+        </p>
+      {{ end }}
+      {{ if .text }}<p>{{ .text | markdownify }}</p>{{ end }}
     </footer>
   {{ end }}
 

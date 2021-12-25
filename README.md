@@ -18,7 +18,10 @@ permalinks:
 params:
   paginate: 50
   description: "Modify this to create a good config file."
-  footer: "You can use Markdown here. For example, you may want to write the copyright or license. (&copy; 2022 [Name](https://example.com)"
+  footer:
+    poweredByHugo: true
+    themeInformation: true
+    text: "You can use Markdown here. For example, you may want to write the copyright or license. (&copy; 2022 [Name](https://example.com)"
   gtagId: "G-BP3FCQ5SPR" # If required, set a valid gtag(v4). e.g."G-XXXXXXXXXX"
   hatenaBookmark: true
   hatenaStar: true
