@@ -24,6 +24,8 @@
   {{ if .Site.Params.alternativeTweet }}
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   {{ end }}
+
+  {{ partial "head.html" . }}
 </head>
 
 <body class="markdown-body">
@@ -69,6 +71,7 @@
     {{ partial "hatena_star_js.html" . }}
   {{ end }}
 
+  {{ partial "foot.html" . }}
 </body>
 
 </html>
