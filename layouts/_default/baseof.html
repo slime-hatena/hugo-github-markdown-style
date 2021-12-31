@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if not .IsHome }}{{ .Title }}｜{{ end }}{{ .Site.Title }}</title>
+  {{ if .IsHome }}
+  <meta name="Description" content="{{ .Site.Params.description }}">
+  {{ else }}
+  <meta name="Description" content="{{ .Summary }}">
+  {{ end }}
 
   {{ if eq (getenv "HUGO_ENV") "production" }}
     {{ if .Site.Params.gtagId }}
