@@ -1,0 +1,15 @@
+{{ define "main" }}
+  {{if not .IsHome }}
+    <h1 id="title">{{ .Title | markdownify }}</h1>
+  {{ end }}
+
+  {{ .Content }}
+
+  <ul>
+    {{ range .Data.Terms }}
+      <li>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> ({{ .Count }})
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

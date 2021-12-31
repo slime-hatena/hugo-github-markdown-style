@@ -1,0 +1,20 @@
+name = "GitHub Markdown Style"
+license = "MIT"
+licenselink = "https://github.com/slime-hatena/hugo-github-markdown-style/blob/main/LICENSE"
+description = "A simple, minimalist theme using the sindresorhus/github-markdown-css."
+
+homepage = "https://github.com/slime-hatena/hugo-github-markdown-style"
+
+# demosite = "https://gohugo.io"
+
+tags = ["blog", "company"]
+features = ["some", "awesome", "features"]
+
+authors = [
+  { name = "slime-hatena", homepage = "https://slime-hatena.jp" }
+]
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.89.0"

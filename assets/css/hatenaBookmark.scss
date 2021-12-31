@@ -1,0 +1,41 @@
+div#hatena-bookmark-container {
+  background: var(--color-canvas-subtle) !important;
+  border: 1px solid var(--color-border-default) !important;
+
+  ul#hatena-bookmark-list-container{
+    border-top: 1px solid var(--color-border-default) !important;
+  }
+
+  div.hatena-bookmark-addcomment {
+    background-color: var(--color-border-muted) !important;
+    border: 1px solid var(--color-border-default) !important;
+
+    & > a {
+      border: 1px solid var(--color-border-default) !important;
+      color: var(--color-fg-default) !important;
+    }
+  }
+
+  span.hatena-bookmark-user-info {
+    & > a {
+      color: var(--color-accent-fg) !important;
+    }
+  }
+
+  span.hatena-bookmark-tags > a.hatena-bookmark-user-tag{
+    color: var(--color-accent-fg) !important;
+  }
+
+  span.hatena-bookmark-comment {
+    color: var(--color-fg-default) !important;
+  }
+
+  span.hatena-bookmark-timestamp{
+    color: var(--color-fg-muted) !important;
+  }
+
+  .hatena-bookmark-span-button,
+  .hatena-bookmark-comment-show {
+    color: var(--color-accent-fg) !important;
+  }
+}

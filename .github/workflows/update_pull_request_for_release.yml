@@ -30,7 +30,7 @@ jobs:
             echo "::set-output name=from::${{ steps.get-latest.outputs.release }}";
             echo "::set-output name=skip::false";
           else
-            echo "::set-output name=version::1.0.0";
+            echo "::set-output name=version::0.1.0";
             echo "::set-output name=from::4b825dc642cb6eb9a060e54bf8d69288fbee4904";
             echo "::set-output name=skip::true";
           fi

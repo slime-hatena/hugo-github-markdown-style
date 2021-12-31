@@ -1,0 +1,9 @@
+{{ with resources.Get "css/hatenaBookmark.scss" }}
+  {{ $style := resources.Get . | resources.ToCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ end }}
+<script type="text/javascript" charset="utf-8" src="http://b.hatena.ne.jp/js/bookmark_blogparts.js"></script>
+{{ with resources.Get "js/hatenaBookmark.ts" }}
+  {{ $js := resources.Get . | js.Build | minify | fingerprint }}
+  <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ end }}

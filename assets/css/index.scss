@@ -1,0 +1,90 @@
+@import 'github-markdown-css/github-markdown';
+
+body.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1.8em;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 2em;
+
+  & > p {
+    margin-bottom: .2em !important;
+  }
+}
+
+#site-title {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  padding-bottom: 0.3em;
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.25;
+  border-bottom: 1px solid var(--color-border-muted);
+
+  & > a{
+    text-decoration: none;
+    color: var(--color-fg-default);
+  }
+}
+
+div.description{
+  margin-bottom: 16px;
+}
+
+ul.menu {
+  padding: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+  }
+}
+
+ul.pagination.pagination-default {
+  padding: 0;
+  text-align: center;
+  li {
+    display: inline-block;
+    &:not(:first-child) {
+      margin-left: 0.8em;
+    }
+  }
+}
+
+@media all and (max-width: 480px) {
+  table {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+#title{
+  font-size: 1.8rem;
+}
+
+.article-meta {
+  padding: 16px;
+  margin-bottom: 1.2em;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--color-canvas-subtle);
+  border-radius: 6px;
+  margin-top: 0;
+  & > span:not(:first-child) {
+    margin-left: 0.4em;
+  }
+}
+
+#hatena-star-foot-marker {
+  margin-bottom: 1.2em;
+}
+
+iframe[id^="twitter-widget"]{
+  color-scheme: normal;
+}
