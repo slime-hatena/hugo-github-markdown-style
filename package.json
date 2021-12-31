@@ -1,5 +1,7 @@
 {
+  "name": "hugo-github-markdown-style",
   "dependencies": {
     "github-markdown-css": "^5.1.0"
-  }
+  },
+  "homepage": "https://github.com/slime-hatena/hugo-github-markdown-style"
 }
