@@ -1,0 +1,9 @@
+{{ with resources.Get "css/hatenaStar.scss" }}
+  {{ $style := resources.Get . | resources.ToCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ end }}
+{{ with resources.Get "js/hatenaStar.ts" }}
+  {{ $js := resources.Get . | js.Build | minify | fingerprint }}
+  <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ end }}
+<script async type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>

@@ -58,7 +58,7 @@ yarn run format-check
 
 ### Git Commit Messages
 
-The commit message is set based on "[Conventional Commits](https://www.conventionalcommits.org)".
+The commit message is set based on "[Conventional Commits](https://www.conventionalcommits.org)". Please write in Japanese or English.
 
 ```txt
 <type>[optional scope]: <description>

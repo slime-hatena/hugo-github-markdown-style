@@ -1,0 +1,59 @@
+{{ define "main" }}
+  <h1><span id="title">{{ .Title | markdownify }}</span></h1>
+  <div class="article-meta">
+    {{ with .Params.author }}
+      <span>{{ . }}</span>
+    {{ end }}
+    {{ if (gt .Params.date 0) }}
+      <span>{{ .Date.Format "2006/01/02" }}</span>
+    {{ end }}
+    {{ with .Params.categories }}
+      <span>
+        カテゴリ:
+        {{ range . }}
+          <a href="/categories/{{ . }}">{{ . }}</a>
+        {{ end }}
+      </span>
+    {{ end }}
+    {{ with .Params.tags }}
+      <span>
+        タグ:
+        {{ range . }}
+          <a href="/tags/{{ . }}">{{ . }}</a>
+        {{ end }}
+      </span>
+    {{ end }}
+  </div>
+
+  {{ if .TableOfContents }}
+    <h2>目次</h2>
+    {{ .TableOfContents }}
+    <hr>
+  {{ end }}
+
+  {{ .Content }}
+
+  {{ if .Site.Params.hatenaStar }}
+    <div id="hatena-star-foot-marker" class="hatena-star-marker"></div>
+  {{ end }}
+
+  {{ if .Site.Params.hatenaBookmark }}
+    <div id="hatena-bookmark-marker"></div>
+  {{ end }}
+
+  <ul>
+  {{ if .Site.Params.editThis }}
+    {{ $filepath := replace .File.Path "\\" "/" }}
+    {{ if .Site.Params.editThis.gitHub }}
+      <li><a href="https://github.com/{{ .Site.Params.editThis.gitHub.repo }}/edit/{{ .Site.Params.editThis.gitHub.branch }}/content/{{ $filepath }}" target="_blank" rel="nofollow noopener">GitHubで編集する</a></li>
+    {{ end }}
+    {{ if .Site.Params.editThis.gitHubDev }}
+      <li><a href="https://github.dev/{{ .Site.Params.editThis.gitHub.repo }}/blob/{{ .Site.Params.editThis.gitHub.branch }}/content/{{ $filepath }}" target="_blank" rel="nofollow noopener">GitHub.devで編集する</a></li>
+    {{ end }}
+    {{ if .Site.Params.editThis.vsCode }}
+      <li><a href="{{ .Site.Params.editThis.vsCode.url }}" target="_blank" rel="nofollow noopener">Visual Studio Code for the Webで編集する</a></li>
+    {{ end }}
+  {{ end }}
+    <li>Permalink: <a id="permalink" href="{{ .Permalink }}">{{ .Permalink }}</a></li>
+  </ul>
+{{ end }}

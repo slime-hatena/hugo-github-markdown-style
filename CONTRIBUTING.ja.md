@@ -42,7 +42,7 @@ Pull requestsはいつでも大歓迎です。
 
 ### コミットメッセージ
 
-コミットメッセージは "[Conventional Commits](https://www.conventionalcommits.org)" に基づいて設定します。
+コミットメッセージは "[Conventional Commits](https://www.conventionalcommits.org)" に基づいて設定します。日本語または英語で記載してください。
 
 ```txt
 <型>[任意 スコープ]: <タイトル>
@@ -70,7 +70,7 @@ Pull requestsはいつでも大歓迎です。
 - **ci**: CIの設定ファイルやスクリプトの変更。 (スコープの例: action)
 - **chore**: buildやci、その他の型に含まれない変更。(スコープの例: git)
 - **docs**: ドキュメントのみの変更
-- **feat**: 新規昨日の追加。
+- **feat**: 新規機能の追加。
 - **fix**: 不具合の修正。
 - **perf**: パフォーマンス向上のみを目的とした変更。
 - **refactor**: 不具合の修正や機能の追加を含まないコードの変更。
