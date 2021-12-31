@@ -44,7 +44,7 @@
     <div class="description">{{ .Site.Params.description }}</div>
     <ul class="menu">
       {{ range .Site.Menus.main }}
-        <li><a href="{{ .URL | relURL }}"{{ if .Params.target }} target="{{ .Params.target }}"{{ end }}><img src="https://img.shields.io/badge/{{ if .Params.label }}{{ .Params.label }}{{ else }}{{ .URL }}{{ end }}-{{ if .Params.message }}{{ .Params.message }}{{ else }}{{ .Name }}{{ end }}-{{ .Params.Color }}{{ if .Params.logo }}?logo={{ .Params.logo }}{{ end }}"></a></li>
+        <li><a href="{{ .URL | relURL }}"{{ if .Params.target }} target="{{ .Params.target }}" rel="nofollow noopener"{{ end }}><img src="https://img.shields.io/badge/{{ if .Params.label }}{{ .Params.label }}{{ else }}{{ .URL }}{{ end }}-{{ if .Params.message }}{{ .Params.message }}{{ else }}{{ .Name }}{{ end }}-{{ .Params.Color }}{{ if .Params.logo }}?logo={{ .Params.logo }}{{ end }}" alt="{{ if .Params.label }}{{ .Params.label }}{{ else }}{{ .URL }}{{ end }} - {{ if .Params.message }}{{ .Params.message }}{{ else }}{{ .Name }}{{ end }}"></a></li>
       {{ end }}
     </ul>
   </header>
@@ -58,13 +58,13 @@
       {{ if or .poweredByHugo .themeInformation }}
         <p>
           {{ if .poweredByHugo }}
-            <a href="https://gohugo.io/" target="_blank">Powered by Hugo</a>
+            <a href="https://gohugo.io/" target="_blank" rel="nofollow noopener">Powered by Hugo</a>
           {{ end }}
           {{ if and .poweredByHugo .themeInformation }}
             |
           {{ end }}
           {{ if .themeInformation }}
-            <a href="https://github.com/slime-hatena/hugo-github-markdown" target="_blank"> Theme: hugo-github-markdown</a>
+            <a href="https://github.com/slime-hatena/hugo-github-markdown" target="_blank" rel="nofollow noopener"> Theme: hugo-github-markdown</a>
           {{ end }}
         </p>
       {{ end }}

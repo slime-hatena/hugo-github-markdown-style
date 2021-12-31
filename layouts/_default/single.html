@@ -45,13 +45,13 @@
   {{ if .Site.Params.editThis }}
     {{ $filepath := replace .File.Path "\\" "/" }}
     {{ if .Site.Params.editThis.gitHub }}
-      <li><a href="https://github.com/{{ .Site.Params.editThis.gitHub.repo }}/edit/{{ .Site.Params.editThis.gitHub.branch }}/content/{{ $filepath }}" target="_blank">GitHubで編集する</a></li>
+      <li><a href="https://github.com/{{ .Site.Params.editThis.gitHub.repo }}/edit/{{ .Site.Params.editThis.gitHub.branch }}/content/{{ $filepath }}" target="_blank" rel="nofollow noopener">GitHubで編集する</a></li>
     {{ end }}
     {{ if .Site.Params.editThis.gitHubDev }}
-      <li><a href="https://github.dev/{{ .Site.Params.editThis.gitHub.repo }}/blob/{{ .Site.Params.editThis.gitHub.branch }}/content/{{ $filepath }}" target="_blank">GitHub.devで編集する</a></li>
+      <li><a href="https://github.dev/{{ .Site.Params.editThis.gitHub.repo }}/blob/{{ .Site.Params.editThis.gitHub.branch }}/content/{{ $filepath }}" target="_blank" rel="nofollow noopener">GitHub.devで編集する</a></li>
     {{ end }}
     {{ if .Site.Params.editThis.vsCode }}
-      <li><a href="{{ .Site.Params.editThis.vsCode.url }}" target="_blank">Visual Studio Code for the Webで編集する</a></li>
+      <li><a href="{{ .Site.Params.editThis.vsCode.url }}" target="_blank" rel="nofollow noopener">Visual Studio Code for the Webで編集する</a></li>
     {{ end }}
   {{ end }}
     <li>Permalink: <a id="permalink" href="{{ .Permalink }}">{{ .Permalink }}</a></li>
