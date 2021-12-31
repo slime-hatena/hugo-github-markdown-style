@@ -26,6 +26,15 @@ params:
   hatenaBookmark: true
   hatenaStar: true
   alternativeTweet: true
+  editThis:
+    gitHub:
+      repo: user/blog
+      branch: main
+    gitHubDev:
+      repo: user/blog
+      branch: main
+    vsCode:
+      url: https://vscode.dev/github/user/blog/
 
 # Use shields.io. Set a value that it can interpret.
 # https://shields.io/#your-badge
