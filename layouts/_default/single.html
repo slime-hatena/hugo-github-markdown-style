@@ -26,9 +26,10 @@
   </div>
 
   {{ if .TableOfContents }}
-    <h2>目次</h2>
-    {{ .TableOfContents }}
-    <hr>
+    <details class="toc">
+        <summary>目次</summary>
+        {{ .TableOfContents }}
+    </details>
   {{ end }}
 
   {{ .Content }}
