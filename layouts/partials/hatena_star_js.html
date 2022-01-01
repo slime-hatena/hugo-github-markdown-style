@@ -2,8 +2,15 @@
   {{ $style := resources.Get . | resources.ToCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 {{ end }}
-{{ with resources.Get "js/hatenaStar.ts" }}
-  {{ $js := resources.Get . | js.Build | minify | fingerprint }}
-  <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-{{ end }}
-<script async type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
+<script type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
+<script type="text/javascript">
+  Hatena.Star.SiteConfig = {
+    entryNodes: {
+      'main': {
+        uri: '#permalink',
+        title: '#title',
+        container: '#hatena-star-foot-marker'
+      }
+    }
+  };
+</script>

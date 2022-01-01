@@ -7,6 +7,7 @@ interface HBBlogParts {
   permalinkURI: string;
   permalinkCommentLimit: number;
   listPageCommentLimit: number;
+  debug: undefined|boolean;
 }
 
 interface Window {
@@ -15,9 +16,8 @@ interface Window {
 
 window.HBBlogParts.commentInsertSelector = ['div#hatena-bookmark-marker'];
 window.HBBlogParts.insertPosition = 'after';
-window.HBBlogParts.permalinkSelector = ['span#permalink'];
+window.HBBlogParts.permalinkSelector = ['a#permalink'];
 window.HBBlogParts.permalinkAttribute = 'href';
 window.HBBlogParts.permalinkPathRegexp = /\/.*/;
-window.HBBlogParts.permalinkURI = '{{ .Permalink }}';
 window.HBBlogParts.permalinkCommentLimit = 10;
 window.HBBlogParts.listPageCommentLimit = 10;
