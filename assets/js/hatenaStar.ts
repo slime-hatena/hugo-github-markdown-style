@@ -1,23 +1,3 @@
-interface Window {
-  Hatena: Object;
-}
-
-window.Hatena = {
-  Star: {
-    SiteConfig: {
-      entryNodes: {
-        main: [
-          {
-            uri: '#permalink',
-            title: '#title',
-            container: '#hatena-star-foot-marker'
-          }
-        ]
-      }
-    }
-  }
-};
-
 const observer = new MutationObserver((_) => {
   const addFootButton: HTMLImageElement = document.querySelector(
     '#hatena-star-foot-marker > .hatena-star-star-container .hatena-star-add-button'
