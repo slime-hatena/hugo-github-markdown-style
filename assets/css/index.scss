@@ -1,4 +1,4 @@
-@import 'github-markdown-css/github-markdown';
+@use 'github-markdown-css/github-markdown' as gh;
 
 body.markdown-body {
   box-sizing: border-box;

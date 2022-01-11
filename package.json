@@ -3,5 +3,6 @@
   "dependencies": {
     "github-markdown-css": "^5.1.0"
   },
-  "homepage": "https://github.com/slime-hatena/hugo-github-markdown-style"
+  "homepage": "https://github.com/slime-hatena/hugo-github-markdown-style",
+  "packageManager": "yarn@3.1.1"
 }
