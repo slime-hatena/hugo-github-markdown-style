@@ -72,13 +72,9 @@
           {{ end }}
         </p>
       {{ end }}
+      <p><a href="https://github.com/sindresorhus/github-markdown-css/" target="_blank" rel="noopener noreferrer">sindresorhus/github-markdown-css</a> - <a href="https://github.com/sindresorhus/github-markdown-css/blob/main/license" target="_blank" rel="noopener noreferrer">MIT License</a></p>
       {{ if .text }}<p>{{ .text | markdownify }}</p>{{ end }}
     </footer>
-  {{ end }}
-
-  {{ with resources.Get "js/hatenaStar.ts" }}
-    {{ $js := resources.Get . | js.Build | minify | fingerprint }}
-    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
   {{ end }}
 
   {{ partial "foot.html" . }}
