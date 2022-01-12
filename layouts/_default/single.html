@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <h1><span id="title">{{ .Title | markdownify }}</span></h1>
+  <h1 id="title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
   <div class="article-meta">
     {{ with .Params.author }}
       <span>{{ . }}</span>
@@ -55,6 +55,5 @@
       <li><a href="{{ .Site.Params.editThis.vsCode.url }}" target="_blank" rel="nofollow noopener">Visual Studio Code for the Webで編集する</a></li>
     {{ end }}
   {{ end }}
-    <li>Permalink: <a id="permalink" href="{{ .Permalink }}">{{ .Permalink }}</a></li>
   </ul>
 {{ end }}

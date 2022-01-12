@@ -1,14 +1,10 @@
-{{ with resources.Get "css/hatenaStar.scss" }}
-  {{ $style := resources.Get . | resources.ToCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-{{ end }}
 <script type="text/javascript" src="https://s.hatena.ne.jp/js/HatenaStar.js"></script>
 <script type="text/javascript">
   Hatena.Star.SiteConfig = {
     entryNodes: {
       'main': {
-        uri: '#permalink',
-        title: '#title',
+        uri: '#title > a',
+        title: '#title > a',
         container: '#hatena-star-foot-marker'
       }
     }
