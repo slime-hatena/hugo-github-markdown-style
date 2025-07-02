@@ -1,5 +1,6 @@
 # hugo-github-markdown
 
+hugo version: >= v0.147.9-extend
 
 ## Sample config
 

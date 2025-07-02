@@ -1,5 +1,5 @@
 {{ with resources.Get "css/hatenaBookmark.scss" }}
-  {{ $style := resources.Get . | resources.ToCSS | minify | fingerprint }}
+  {{ $style := resources.Get . | css.Sass | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 {{ end }}
 <script type="text/javascript" charset="utf-8" src="https://b.hatena.ne.jp/js/bookmark_blogparts.js"></script>
